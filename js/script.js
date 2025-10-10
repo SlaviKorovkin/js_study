@@ -54,7 +54,43 @@
 
 'use strict'
 
+let num = 20;
+
 function showFirstMessage(text) {
-    console.log('Hello world!');
+    console.log('text');
+    num = 10;
 }
-showFirstMessage();
+showFirstMessage('Hello world!');
+console.log(num);
+
+// function calc(a, b) {
+//     return (a + b);
+// }
+
+// console.log(calc(3, 4));
+// console.log(calc(5, 6));
+// console.log(calc(7, 8));
+
+function ret() {
+    let num = 50;
+    return num;
+}
+
+const anotherNum = ret();
+console.log(anotherNum);
+
+const logger = function () {
+    console.log('hello');
+};
+
+logger();
+
+const calc = (a, b) => a + b;
+
+const usdCurr = 28;
+
+function convert(amount, curr) {
+    console.log(curr * amount);
+}
+
+convert(500, usdCurr);
