@@ -87,10 +87,88 @@ logger();
 
 const calc = (a, b) => a + b;
 
+// const usdCurr = 28;
+// const eurCurr = 32;
+
+// function convert(amount, curr) {
+//     console.log(curr * amount);
+// }
+
+// convert(500, usdCurr);
+// convert(500, eurCurr);
+
 const usdCurr = 28;
+const discount = 0.9
 
 function convert(amount, curr) {
-    console.log(curr * amount);
+    return curr * amount;
 }
 
-convert(500, usdCurr);
+function promotion(result) {
+    console.log(result * discount);
+}
+const res = convert(500, usdCurr);
+promotion(res);
+
+function test() {
+    for (let i = 0; i < 5; i++) {
+        console.log(i);
+        if (i === 3) return
+    }
+    console.log('Done');
+}
+
+test();
+
+function sayHello(name) {
+    return `Привет, ${name}`;
+}
+
+sayHello('Антон')
+
+
+function getMathResult(base, count) {
+    if (typeof (count) !== 'number' || count <= 0)
+        return base;
+
+    let res = '';
+
+    for (let i = 1; i <= count; i++) {
+        if (i === count) {
+            res += `${base * i}`
+        } else {
+            res += `${base * i}---`;
+        }
+    }
+    return res;
+}
+
+console.log(getMathResult(3, 5));
+
+
+const str = 'test';
+// const arr = [1, 2, 4];
+
+console.log(str.length);
+console.log(str.toUpperCase());
+
+let fruit = 'Some fruit';
+
+console.log(fruit.indexOf('fruit'));
+
+
+const logg = 'Hello world';
+
+console.log(logg.slice(6, 11));
+console.log(logg.slice(6,));
+
+
+console.log(logg.substring(6, 11));
+// console.log(logg.substr(6, 5)); <- с какой позиции и сколько символов
+
+const num = 12.2
+console.log(Math.round(num));
+
+const test = '12.2px';
+console.log(parseInt(test));
+console.log(parseFloat(test));
