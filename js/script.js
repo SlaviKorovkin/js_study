@@ -96,87 +96,132 @@
 // const newObj = { ...q };
 // console.log(newObj);
 
-const personalPlanPeter = {
-    name: "Peter",
-    age: "29",
-    skills: {
-        languages: ['ru', 'eng'],
-        programmingLangs: {
-            js: '20%',
-            php: '10%'
-        },
-        exp: '1 month'
-    },
-    showAgeAndLangs: function (plan) {
-        const { age } = plan;
-        const { languages } = plan.skills;
-        let str = `Мне ${age} и я владею языками: `;
+// const personalPlanPeter = {
+//     name: "Peter",
+//     age: "29",
+//     skills: {
+//         languages: ['ru', 'eng'],
+//         programmingLangs: {
+//             js: '20%',
+//             php: '10%'
+//         },
+//         exp: '1 month'
+//     },
+//     showAgeAndLangs: function (plan) {
+//         const { age } = plan;
+//         const { languages } = plan.skills;
+//         let str = `Мне ${age} и я владею языками: `;
 
-        languages.forEach(function (lang) {
-            str += `${lang.toUpperCase()} `;
-        });
+//         languages.forEach(function (lang) {
+//             str += `${lang.toUpperCase()} `;
+//         });
 
-        return str;
+//         return str;
+//     }
+// };
+
+// function showExperience(plan) {
+//     const { exp } = plan.skills;
+//     return exp;
+// }
+
+// showExperience(personalPlanPeter);
+
+// function showProgrammingLangs(plan) {
+//     let str = '';
+//     const { programmingLangs } = plan.skills;
+//     for (let key in programmingLangs) {
+//         str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
+//     }
+
+//     return str;
+// }
+
+// showProgrammingLangs(personalPlanPeter);
+
+// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
+
+// function showFamily(arr) {
+//     if (arr.length === 0) {
+//         return 'Семья пуста';
+//     }
+
+//     return `Семья состоит из: ${arr.join(' ')}`;
+
+
+// }
+
+// showFamily(family);
+
+// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
+
+// function standardizeStrings(arr) {
+//     arr.forEach(city => {
+//         console.log(city.toLowerCase());
+//     });
+
+// }
+
+// standardizeStrings(favoriteCities);
+
+// const someString = 'This is some strange string';
+
+// function reverse(str) {
+//     if (typeof (str) !== 'string') {
+//         return 'Ошибка!';
+//     }
+
+//     let newStr = '';
+//     for (let i = str.length - 1; i >= 0; i--) {
+//         newStr += str[i];
+//     }
+
+//     return newStr;
+// }
+
+// reverse(someString);
+
+// const baseCurrencies = ['USD', 'EUR'];
+// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
+
+// function availableCurr(arr, missingCurr) {
+//     let str = '';
+//     arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
+
+//     arr.forEach(function(curr, i) {
+//         if (curr !== missingCurr) {
+//             str += `${curr}\n`;
+//         }
+//     });
+
+//     return str;
+// }
+
+// availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY')
+
+let str = 'some';
+let strObj = new String(str);
+
+// console.log(typeof (str));
+// console.log(typeof (strObj));
+
+console.dir([1, 2, 3]);
+
+const soldier = {
+    health: 400,
+    armor: 100,
+    sayHello: function () {
+        console.log('Hello');
     }
 };
 
-function showExperience(plan) {
-    const { exp } = plan.skills;
-    return exp;
-}
+const john = {
+    health: 100
+};
 
-showExperience(personalPlanPeter);
+// john.__proto__ = soldier;
 
-function showProgrammingLangs(plan) {
-    let str = '';
-    const { programmingLangs } = plan.skills;
-    for (let key in programmingLangs) {
-        str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
-    }
+Object.setPrototypeOf(john, soldier);
 
-    return str;
-}
-
-showProgrammingLangs(personalPlanPeter);
-
-const family = ['Peter', 'Ann', 'Alex', 'Linda'];
-
-function showFamily(arr) {
-    if (arr.length === 0) {
-        return 'Семья пуста';
-    }
-
-    return `Семья состоит из: ${arr.join(' ')}`;
-
-
-}
-
-showFamily(family);
-
-const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
-
-function standardizeStrings(arr) {
-    arr.forEach(city => {
-        console.log(city.toLowerCase());
-    });
-
-}
-
-standardizeStrings(favoriteCities);
-
-const someString = 'This is some strange string';
-
-function reverse(str) {
-    if (typeof (str) !== 'string') {
-        return 'Ошибка!';
-    }
-
-    let newStr = '';
-    for (let i = str.length - 1; i >= 0; i--) {
-        newStr += str[i];
-    }
-
-    return newStr;
-}
-
-reverse(someString);
+// console.log(john.armor);
+john.sayHello();
