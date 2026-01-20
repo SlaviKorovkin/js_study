@@ -1,227 +1,55 @@
 'use strict';
 
-// // let a = 5,
-// //     b = a;
+// To string 
 
-// // b = b + 5;
+// 1)
+console.log(typeof (String(null)));
+console.log(typeof (String(4)));
 
-// // console.log(b);
-// // console.log(a);
+// 2)
+console.log(typeof (5 + ''));
 
-// // const obj = {
-// //     a: 5,
-// //     b: 1
-// // };
+const num = 5;
 
-// // const copy = obj; //Ссылку (не копируется объект а кладётся ссылка на него)
+console.log('https://vk.com/catalog/' + num);
 
-// // copy.a = 10; //Модифицируя копия мы модифицируем сам объект
+const fontSize = 26 + 'px';
 
-// // console.log(copy);
-// // console.log(obj);
+// To number
 
-// function copy(mainObj) {
-//     let objCopy = {};
+// 1)
 
-//     let key;
-//     for (key in mainObj) {
-//         objCopy[key] = mainObj[key];
-//     }
+console.log(typeof (Number('4')));
 
-//     return objCopy;
-// }
+// 2)
+console.log(typeof (+ '5'));
 
-// const numbers = {
-//     a: 2,
-//     b: 5,
-//     c: {
-//         x: 7,
-//         y: 4
-//     }
-// };
+// 3)
 
-// const newNumbers = copy(numbers);
+console.log(typeof (parseInt('15px', 10)));
 
-// newNumbers.a = 10;
+let answ = +prompt('Hello', '');
 
-// console.log(newNumbers);
-// console.log(numbers);
+// To boolean
 
-// const add = {
-//     d: 17,
-//     e: 20
-// };
+// 0, '', null, undefined, NaN; <- всегда false
 
-// console.log(Object.assign(numbers, add));
+let switcher = null;
 
-// const clone = Object.assign({}, add);
+if (switcher) {
+    console.log('Working...');
+}
 
-// clone.d = 20;
+switcher = 1;
 
-// // console.log(add);
-// // console.log(clone);
+if (switcher) {
+    console.log('Working...');
+}
 
-// const oldArray = ['a', 'b', 'c'];
-// const newArray = oldArray.slice();
+// 2)
 
-// newArray[1] = 'asdadwawd';
-// console.log(newArray);
-// console.log(oldArray);
+console.log(typeof (Boolean('4')));
 
-// const video = ['youtube', 'vimeo', 'rutube'],
-//     blogs = ['wordpress', 'livejournal', 'blogger'],
-//     internet = [...video, ...blogs, 'vk', 'facebook'];
+// 3)
 
-// console.log(internet);
-
-// function log(a, b, c) {
-//     console.log(a);
-//     console.log(b);
-//     console.log(c);
-// }
-
-// const num = [2, 5, 7];
-
-// log(...num);
-
-// const array = ['a', 'b'];
-
-// const newAarray = [...array];
-
-// const q = {
-//     one: 1,
-//     two: 2
-// };
-
-// const newObj = { ...q };
-// console.log(newObj);
-
-// const personalPlanPeter = {
-//     name: "Peter",
-//     age: "29",
-//     skills: {
-//         languages: ['ru', 'eng'],
-//         programmingLangs: {
-//             js: '20%',
-//             php: '10%'
-//         },
-//         exp: '1 month'
-//     },
-//     showAgeAndLangs: function (plan) {
-//         const { age } = plan;
-//         const { languages } = plan.skills;
-//         let str = `Мне ${age} и я владею языками: `;
-
-//         languages.forEach(function (lang) {
-//             str += `${lang.toUpperCase()} `;
-//         });
-
-//         return str;
-//     }
-// };
-
-// function showExperience(plan) {
-//     const { exp } = plan.skills;
-//     return exp;
-// }
-
-// showExperience(personalPlanPeter);
-
-// function showProgrammingLangs(plan) {
-//     let str = '';
-//     const { programmingLangs } = plan.skills;
-//     for (let key in programmingLangs) {
-//         str += `Язык ${key} изучен на ${programmingLangs[key]}\n`
-//     }
-
-//     return str;
-// }
-
-// showProgrammingLangs(personalPlanPeter);
-
-// const family = ['Peter', 'Ann', 'Alex', 'Linda'];
-
-// function showFamily(arr) {
-//     if (arr.length === 0) {
-//         return 'Семья пуста';
-//     }
-
-//     return `Семья состоит из: ${arr.join(' ')}`;
-
-
-// }
-
-// showFamily(family);
-
-// const favoriteCities = ['liSBon', 'ROME', 'miLan', 'Dublin'];
-
-// function standardizeStrings(arr) {
-//     arr.forEach(city => {
-//         console.log(city.toLowerCase());
-//     });
-
-// }
-
-// standardizeStrings(favoriteCities);
-
-// const someString = 'This is some strange string';
-
-// function reverse(str) {
-//     if (typeof (str) !== 'string') {
-//         return 'Ошибка!';
-//     }
-
-//     let newStr = '';
-//     for (let i = str.length - 1; i >= 0; i--) {
-//         newStr += str[i];
-//     }
-
-//     return newStr;
-// }
-
-// reverse(someString);
-
-// const baseCurrencies = ['USD', 'EUR'];
-// const additionalCurrencies = ['UAH', 'RUB', 'CNY'];
-
-// function availableCurr(arr, missingCurr) {
-//     let str = '';
-//     arr.length === 0 ? str = 'Нет доступных валют' : str = 'Доступные валюты:\n';
-
-//     arr.forEach(function(curr, i) {
-//         if (curr !== missingCurr) {
-//             str += `${curr}\n`;
-//         }
-//     });
-
-//     return str;
-// }
-
-// availableCurr([...baseCurrencies, ...additionalCurrencies], 'CNY')
-
-let str = 'some';
-let strObj = new String(str);
-
-// console.log(typeof (str));
-// console.log(typeof (strObj));
-
-console.dir([1, 2, 3]);
-
-const soldier = {
-    health: 400,
-    armor: 100,
-    sayHello: function () {
-        console.log('Hello');
-    }
-};
-
-const john = {
-    health: 100
-};
-
-// john.__proto__ = soldier;
-
-Object.setPrototypeOf(john, soldier);
-
-// console.log(john.armor);
-john.sayHello();
+console.log(typeof (!!'44444'));
