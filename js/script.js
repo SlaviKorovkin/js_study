@@ -1,74 +1,92 @@
-'use strict';
+// function a() {
+//     console.log('Hello World')
+// }
 
-// To string 
+// a();
 
-// 1)
-console.log(typeof (String(null)));
-console.log(typeof (String(4)));
+// a = 10;
 
-// 2)
-console.log(typeof (5 + ''));
+// a();
 
-const num = 5;
+// const myCity = {
+//     city: 'New York',
+//     popular: true,
+//     country: 'USA'
+// }
 
-console.log('https://vk.com/catalog/' + num);
+// myCity.city = 'Las Vegas';
 
-const fontSize = 26 + 'px';
 
-// To number
+// console.log(myCity.city);
 
-// 1)
+// console.log(myCity.popular);
 
-console.log(typeof (Number('4')));
+// const myCity = {
+//     city: 'New York',
+// }
 
-// 2)
-console.log(typeof (+ '5'));
+// myCity.popular = true;
 
-// 3)
+// console.log(myCity);
 
-console.log(typeof (parseInt('15px', 10)));
+// myCity.country = 'USA';
 
-let answ = +prompt('Hello', '');
+// console.log(myCity);
 
-// To boolean
 
-// 0, '', null, undefined, NaN; <- всегда false
-
-let switcher = null;
-
-if (switcher) {
-    console.log('Working...');
+const myCity = {
+    city: 'New York',
+    popular: true,
+    country: 'USA'
 }
 
-switcher = 1;
+delete myCity.country;
 
-if (switcher) {
-    console.log('Working...');
+console.log(myCity)
+
+const myCity = {
+    city: 'New York'
 }
 
-// 2)
+myCity['popular'] = true
 
-console.log(typeof (Boolean('4')));
+console.log(myCity)
 
-// 3)
+const countryPropertyName = 'country'
 
-console.log(typeof (!!'44444'));
+myCity[countryPropertyName] = 'USA'
 
+console.log(myCity)
 
-function createCounter() {
-    let counter = 0;
-
-    const myFunction = function () {
-        counter = counter + 1;
-        return counter;
+const myCity = {
+    city: 'New York',
+    info: {
+        isPopular: true,
+        country: 'USA'
     }
-
-    return myFunction;
 }
 
-const increment = createCounter();
-const c1 = increment();
-const c2 = increment();
-const c3 = increment();
+console.log(myCity.info.isPopular)
 
-console.log(c1, c2, c3);
+delete myCity.info['isPopular']
+
+console.log(myCity)
+
+
+const myCity = {
+    city: 'New York',
+    cityGreeting: function () {
+        console.log('Greetings!!')
+    }
+}
+
+myCity.cityGreeting()
+
+const myCity = {
+    city: 'New York',
+    cityGreeting() {
+        console.log('Greetings!!')
+    }
+}
+
+myCity.cityGreeting()
